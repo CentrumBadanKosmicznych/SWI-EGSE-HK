@@ -1,0 +1,5 @@
+# Distribution / packaging
+Debug/
+.vs/
+Release/
+tmp/

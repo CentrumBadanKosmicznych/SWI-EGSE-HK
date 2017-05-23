@@ -76,7 +76,7 @@ Discarded input sections
  .data          0x00000000        0x0 App/src/Communication/CheckSum_Fletcher16.o
  .bss           0x00000000        0x0 App/src/Communication/CheckSum_Fletcher16.o
  .debug_line    0x00000000        0x0 App/src/Communication/CheckSum_Fletcher16.o
- .debug_str     0x00000000      0x14a App/src/Communication/CheckSum_Fletcher16.o
+ .debug_str     0x00000000      0x154 App/src/Communication/CheckSum_Fletcher16.o
  .comment       0x00000000       0x31 App/src/Communication/CheckSum_Fletcher16.o
  .group         0x00000000        0x8 App/src/app.o
  .text          0x00000000        0x0 App/src/app.o
@@ -134,7 +134,7 @@ Discarded input sections
                 0x00000000       0x28 Boards/SWI-PSU-BIAS-DM1/board.o
  .debug_ranges  0x00000000       0x18 Boards/SWI-PSU-BIAS-DM1/board.o
  .debug_line    0x00000000      0x116 Boards/SWI-PSU-BIAS-DM1/board.o
- .debug_str     0x00000000      0x895 Boards/SWI-PSU-BIAS-DM1/board.o
+ .debug_str     0x00000000      0x89f Boards/SWI-PSU-BIAS-DM1/board.o
  .comment       0x00000000       0x31 Boards/SWI-PSU-BIAS-DM1/board.o
  .debug_frame   0x00000000       0x34 Boards/SWI-PSU-BIAS-DM1/board.o
  .text          0x00000000        0x0 Devices/ADC128S102.o
@@ -166,7 +166,7 @@ Discarded input sections
                 0x00000000       0x30 Devices/SN74HC138Ntriple.o
  .debug_ranges  0x00000000       0x20 Devices/SN74HC138Ntriple.o
  .debug_line    0x00000000      0x1b0 Devices/SN74HC138Ntriple.o
- .debug_str     0x00000000      0x3ba Devices/SN74HC138Ntriple.o
+ .debug_str     0x00000000      0x3c4 Devices/SN74HC138Ntriple.o
  .comment       0x00000000       0x31 Devices/SN74HC138Ntriple.o
  .debug_frame   0x00000000       0x50 Devices/SN74HC138Ntriple.o
  .text          0x00000000        0x0 HAL/AVR/Timer.o
@@ -183,7 +183,7 @@ Discarded input sections
                 0x00000000       0x28 HAL/AVR/Timer.o
  .debug_ranges  0x00000000       0x18 HAL/AVR/Timer.o
  .debug_line    0x00000000      0x110 HAL/AVR/Timer.o
- .debug_str     0x00000000      0x221 HAL/AVR/Timer.o
+ .debug_str     0x00000000      0x22b HAL/AVR/Timer.o
  .comment       0x00000000       0x31 HAL/AVR/Timer.o
  .debug_frame   0x00000000       0x34 HAL/AVR/Timer.o
  .text          0x00000000        0x0 SWI-PSU-BIAS-DM1.o
@@ -1138,34 +1138,34 @@ END GROUP
  .debug_frame   0x000008a8       0xa0 HAL/AVR/GPIO.o
  .debug_frame   0x00000948      0x150 HAL/AVR/SPI.o
 
-.debug_str      0x00000000     0x1938
+.debug_str      0x00000000     0x1942
  *(.debug_str)
- .debug_str     0x00000000      0x20d App/src/Communication/Buffer.o
-                                0x253 (size before relaxing)
- .debug_str     0x0000020d     0x12b4 App/src/app.o
-                               0x1507 (size before relaxing)
- .debug_str     0x000014c1       0x7f App/src/Communication/Frame.o
-                                0xc57 (size before relaxing)
- .debug_str     0x00001540       0x5d App/src/Communication/String.o
-                                0x33a (size before relaxing)
- .debug_str     0x0000159d       0x50 App/src/Dac.o
-                               0x10c0 (size before relaxing)
- .debug_str     0x000015ed       0x1f App/src/Hk.o
-                                0xf8c (size before relaxing)
- .debug_str     0x0000160c       0x36 App/src/Switches.o
-                                0xd63 (size before relaxing)
- .debug_str     0x00001642      0x18f Devices/ADC128S102.o
-                                0x60e (size before relaxing)
- .debug_str     0x000017d1       0x30 Devices/DAC121S101.o
-                                0x555 (size before relaxing)
- .debug_str     0x00001801       0x3a Devices/MAX306EWIdouble.o
-                                0x3b5 (size before relaxing)
- .debug_str     0x0000183b       0x1f SWI-PSU-BIAS-DM1.o
-                                0x82c (size before relaxing)
- .debug_str     0x0000185a       0x68 HAL/AVR/GPIO.o
-                                0x38e (size before relaxing)
- .debug_str     0x000018c2       0x76 HAL/AVR/SPI.o
-                                0x60d (size before relaxing)
+ .debug_str     0x00000000      0x217 App/src/Communication/Buffer.o
+                                0x25d (size before relaxing)
+ .debug_str     0x00000217     0x12b4 App/src/app.o
+                               0x1511 (size before relaxing)
+ .debug_str     0x000014cb       0x7f App/src/Communication/Frame.o
+                                0xc61 (size before relaxing)
+ .debug_str     0x0000154a       0x5d App/src/Communication/String.o
+                                0x344 (size before relaxing)
+ .debug_str     0x000015a7       0x50 App/src/Dac.o
+                               0x10ca (size before relaxing)
+ .debug_str     0x000015f7       0x1f App/src/Hk.o
+                                0xf96 (size before relaxing)
+ .debug_str     0x00001616       0x36 App/src/Switches.o
+                                0xd6d (size before relaxing)
+ .debug_str     0x0000164c      0x18f Devices/ADC128S102.o
+                                0x618 (size before relaxing)
+ .debug_str     0x000017db       0x30 Devices/DAC121S101.o
+                                0x55f (size before relaxing)
+ .debug_str     0x0000180b       0x3a Devices/MAX306EWIdouble.o
+                                0x3bf (size before relaxing)
+ .debug_str     0x00001845       0x1f SWI-PSU-BIAS-DM1.o
+                                0x836 (size before relaxing)
+ .debug_str     0x00001864       0x68 HAL/AVR/GPIO.o
+                                0x398 (size before relaxing)
+ .debug_str     0x000018cc       0x76 HAL/AVR/SPI.o
+                                0x617 (size before relaxing)
 
 .debug_loc      0x00000000     0x2d0a
  *(.debug_loc)
