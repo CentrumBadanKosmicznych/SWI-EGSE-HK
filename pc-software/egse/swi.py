@@ -18,10 +18,13 @@ class JuiceSwiCommands(object):
     
     def GET_VERSION(self):
         return b'GetVersion'
-        
-    def ENABLE_SW_ALL(self):
-        return b'EnableSW'
+    
+    def ENABLE_SW(self, switch_id):
+        return b'EnableSW ' + str(switch_id)
 
+    def DISABLE_SW(self, switch_id):
+        return b'DisableSW ' + str(switch_id)
+        
 class JuiceSwiCommunication(object): 
     def __init__(self):
         self.frame = JuiceSwiFrame()
@@ -43,7 +46,11 @@ class JuiceSwiCommunication(object):
         
     def get_received_bytes(self):
         return self.ser.read(self.received_bytes())
-            
+    
+    def clear_buffers(self):
+        self.ser.reset_input_buffer()
+        self.ser.reset_output_buffer()
+    
 class JuiceSwiHK(object):
     def names(self):
         channel_names = []
@@ -143,8 +150,17 @@ class JuiceSwiEGSE(object):
     def getEGSEVersion(self):
         self.communication.send_command(self.commands.GET_VERSION())
         
-    def enableSwitchAll(self):
-        self.communication.send_command(self.commands.ENABLE_SW_ALL())
+    def enableSwitch(self, switch_id):
+        time.sleep(0.05)
+        self.communication.send_command(self.commands.ENABLE_SW(switch_id))
+        time.sleep(0.05)
+        self.communication.clear_buffers()
+        
+    def disableSwitch(self, switch_id):
+        time.sleep(0.05)
+        self.communication.send_command(self.commands.DISABLE_SW(switch_id))
+        time.sleep(0.05)
+        self.communication.clear_buffers()
     
     def getHKnames(self):
         return self.hk.names()
@@ -154,3 +170,16 @@ class JuiceSwiEGSE(object):
         
     def close(self):
         self.communication.disconnect()
+        
+class SWITCH:
+    REF = 0
+    CTS1 = 1
+    CTS2 = 2
+    IF_COMB = 3
+    ACS1 = 4
+    ACS2 = 5
+    CCH = 6
+    MOT = 7
+    HNF = 8
+    AT_RED = 9
+    CT_RED = 10
