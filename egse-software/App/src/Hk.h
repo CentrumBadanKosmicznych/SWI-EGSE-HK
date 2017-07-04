@@ -3,6 +3,7 @@
  *
  * Created: 2016-04-06 19:58:19
  *  Author: Piotr Kuligowski
+ *  Changes: Pawe³ Korba (P.K.) 2017.07.03
  */ 
 
 #ifndef HK_H_
@@ -23,6 +24,8 @@ class Hk_t {
 	void printHK(void);
 	
 	void init(void);
+	void SetMux(uint8_t);
+	void GetValue(uint8_t);
 	
 	explicit Hk_t();
 	

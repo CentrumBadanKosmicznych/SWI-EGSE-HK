@@ -3,6 +3,7 @@
  *
  * Created: 2016-04-05 03:22:11
  *  Author: Piotr Kuligowski
+ *  Changes: Pawe³ Korba (P.K.) 2017.07.03
  */ 
 
 #include "app.h"
@@ -68,6 +69,31 @@ void begin(void){
 				Frame.printFrame(Commands.REPLY_ERROR_PARAM_OUT_OF_RANGE);
 				else
 				Frame.printFrame(Commands.REPLY_ERROR_INWALID_PARAMS);
+			//P.K. 2017.07.03 start
+			} else if(Frame.receivedCommand(Buffer.get(), received_bytes, Commands.COMMAND_SET_MUX)){ 
+				if ((Switches.loadParameter(Buffer.get())>=0)&&(Switches.loadParameter(Buffer.get())<=63)){
+					Serial0.printf(Commands.COMMAND_SET_MUX);
+					Frame.printCommandDataSeparator();
+					Serial0.printf("%i", Switches.loadParameter(Buffer.get()));
+					Frame.printTerminator();
+					HK.SetMux(Switches.loadParameter(Buffer.get()));
+				} else if(Switches.loadParameter(Buffer.get())>63)
+				Frame.printFrame(Commands.REPLY_ERROR_PARAM_OUT_OF_RANGE);
+				else
+				Frame.printFrame(Commands.REPLY_ERROR_INWALID_PARAMS);	
+			} else if(Frame.receivedCommand(Buffer.get(), received_bytes, Commands.COMMAND_GET_VALUE)){
+			    if ((Switches.loadParameter(Buffer.get())>=0)&&(Switches.loadParameter(Buffer.get())<=7)){
+				    Serial0.printf(Commands.COMMAND_GET_VALUE);
+				    Frame.printCommandDataSeparator();
+				    Serial0.printf("%i", Switches.loadParameter(Buffer.get()));
+					Frame.printParamSeparator();
+				    HK.GetValue(Switches.loadParameter(Buffer.get()));	
+					Frame.printTerminator();
+			} else if(Switches.loadParameter(Buffer.get())>7)
+			Frame.printFrame(Commands.REPLY_ERROR_PARAM_OUT_OF_RANGE);
+			else
+			Frame.printFrame(Commands.REPLY_ERROR_INWALID_PARAMS);								
+		    //P.K. 2017.07.03 end									
 			} else 
 				Frame.printFrame(Commands.REPLY_ERROR_UNDEFINED_COMMAND);
 				
